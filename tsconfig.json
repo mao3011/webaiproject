@@ -1,27 +1,47 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "target": "ES2017",                    // モダンブラウザをターゲットに
+    "lib": [
+      "dom",                               // DOM APIs
+      "dom.iterable",                      // イテレータ関連
+      "esnext"                             // 最新のJS機能
+    ],
+    "allowJs": true,                       // JavaScript ファイルの使用を許可
+    "skipLibCheck": true,                  // 型定義ファイルのチェックをスキップ
+    "strict": true,                        // 厳格な型チェックを有効化
+    "noEmit": true,                        // コンパイル結果を出力しない
+    "esModuleInterop": true,               // CommonJSモジュールとESモジュールの相互運用性
+    "module": "esnext",                    // モジュールシステム
+    "moduleResolution": "bundler",         // Next.js 13/14ではbundlerを推奨
+    "resolveJsonModule": true,             // JSONモジュールのインポートを許可
+    "isolatedModules": true,               // ファイルを個別にコンパイル
+    "jsx": "preserve",                     // JSXの処理方法
+    "incremental": true,                   // 差分ビルド
     "plugins": [
       {
-        "name": "next"
+        "name": "next"                     // Next.js用のTypeScriptプラグイン
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"]                   // パスエイリアス設定
+    },
+    // 追加推奨の設定
+    "forceConsistentCasingInFileNames": true,  // ファイル名の大文字小文字を厳格に
+    "baseUrl": ".",                            // モジュール解決のベースパス
+    "allowImportingTsExtensions": true,        // .tsファイルの直接インポートを許可
+    "noFallthroughCasesInSwitch": true        // switch文のフォールスルーを防ぐ
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",                      // Next.jsの型定義
+    "**/*.ts",                            // すべてのTypeScriptファイル
+    "**/*.tsx",                           // すべてのTypeScript+JSXファイル
+    ".next/types/**/*.ts",                // Next.jsが生成する型定義
+    "src/**/*.ts",                        // srcディレクトリ内のTS
+    "src/**/*.tsx"                        // srcディレクトリ内のTSX
+  ],
+  "exclude": [
+    "node_modules",                       // node_modulesを除外
+    ".next",                              // ビルド出力を除外
+    "out"                                 // エクスポート出力を除外
+  ]
 }
