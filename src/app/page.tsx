@@ -30,7 +30,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 font-sans">
+    <div className="min-h-screen">
       <Header 
         activeSection={activeSection} 
         sectionRefs={sectionRefs} 

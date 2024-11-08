@@ -1,9 +1,11 @@
+'use client';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 import { Navigation } from './Navigation';
-import { SectionRefs } from '@/types';
+import type { SectionRefs } from '@/types';
 
 interface HeaderProps {
   activeSection: string;
@@ -15,7 +17,7 @@ export const Header = ({ activeSection, sectionRefs, scrollToSection }: HeaderPr
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white dark:bg-gray-900 transition-all duration-300 shadow-md">
+    <header className="fixed w-full top-0 z-50 bg-white transition-all duration-300 shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Logo />
         <Navigation 
@@ -34,7 +36,7 @@ export const Header = ({ activeSection, sectionRefs, scrollToSection }: HeaderPr
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white dark:bg-gray-900 py-4 shadow-lg"
+          className="md:hidden bg-white py-4 shadow-lg"
         >
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             {Object.entries(sectionRefs).map(([key, _]) => (
@@ -45,7 +47,7 @@ export const Header = ({ activeSection, sectionRefs, scrollToSection }: HeaderPr
                   setIsMenuOpen(false);
                 }}
                 className={`hover:text-green-500 transition-colors ${
-                  activeSection === key ? 'text-green-500 font-semibold' : ''
+                  activeSection === key ? 'text-green-500 font-semibold' : 'text-gray-800'
                 }`}
               >
                 {key === 'home' ? 'ホーム' : 

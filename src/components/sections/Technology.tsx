@@ -1,11 +1,9 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Database, MessageCircle, Users, Calendar, Video, Smartphone, Lock } from 'lucide-react';
 import { TechCard } from '@/components/ui/TechCard';
-import type { FeatureItem } from '@/types';
-
-interface TechnologyProps {
-  reference: React.RefObject<HTMLElement>;
-}
+import type { FeatureItem, SectionProps } from '@/types';
 
 const techData: FeatureItem[] = [
   {
@@ -45,11 +43,11 @@ const techData: FeatureItem[] = [
   }
 ];
 
-export const Technology = ({ reference }: TechnologyProps) => {
+export const Technology = ({ reference }: SectionProps) => {
   return (
-    <section id="technology" ref={reference} className="py-20 bg-white dark:bg-gray-900">
+    <section id="technology" ref={reference} className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">先進技術</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">先進技術</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {techData.map((tech, index) => (
             <motion.div

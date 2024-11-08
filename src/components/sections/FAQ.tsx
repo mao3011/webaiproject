@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { AccordionItem } from '@/components/ui/AccordionItem';
 import { useState } from 'react';
@@ -26,9 +28,9 @@ export const FAQ = ({ reference }: FAQProps) => {
   };
 
   return (
-    <section id="faq" ref={reference} className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="faq" ref={reference} className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">よくある質問</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">よくある質問</h2>
         <div className="max-w-2xl mx-auto">
           {faqData.map((item, index) => (
             <AccordionItem

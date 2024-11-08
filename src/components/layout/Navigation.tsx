@@ -1,5 +1,7 @@
+'use client';
+
 import { Dispatch, SetStateAction } from 'react';
-import { SectionRefs } from '@/types';
+import type { SectionRefs } from '@/types';
 
 interface NavigationProps {
   activeSection: string;
@@ -25,7 +27,7 @@ export const Navigation = ({
             setIsMenuOpen(false);
           }}
           className={`hover:text-green-500 transition-colors text-sm font-medium ${
-            activeSection === key ? 'text-green-500 font-semibold' : ''
+            activeSection === key ? 'text-green-500 font-semibold' : 'text-gray-800'
           }`}
         >
           {key === 'home' ? 'ホーム' : 

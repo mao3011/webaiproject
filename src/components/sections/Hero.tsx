@@ -1,18 +1,17 @@
+'use client';
+
 import { motion } from 'framer-motion';
+import type { SectionProps } from '@/types';
 
-interface HeroProps {
-  reference: React.RefObject<HTMLElement>;
-}
-
-export const Hero = ({ reference }: HeroProps) => {
+export const Hero = ({ reference }: SectionProps) => {
   return (
-    <section id="home" ref={reference} className="py-20 bg-gradient-to-r from-blue-50 via-green-50 to-blue-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800">
+    <section id="home" ref={reference} className="py-20 bg-gradient-to-r from-blue-50 via-green-50 to-blue-50">
       <div className="container mx-auto px-4 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white"
+          className="text-4xl md:text-5xl font-bold mb-4 text-gray-800"
         >
           AI搭載の訪問看護支援ソリューション
         </motion.h2>
@@ -20,7 +19,7 @@ export const Hero = ({ reference }: HeroProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl mb-8 text-gray-600 dark:text-gray-300"
+          className="text-xl mb-8 text-gray-600"
         >
           効率的で質の高い訪問看護サービスを実現
         </motion.p>
